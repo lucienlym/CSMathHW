@@ -108,21 +108,77 @@ there is a bijection $f: \N \times \N \rightarrow \N$. From this, and by inducti
 quite easily that $\N^k \cong \N$ for every $k$.
 
 \begin{exercise}
-   Consider $\N^*$, the set of all finite sequences of natural numbers, that is,
-   $\N^* = \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup \dots$. Here,
-   $\epsilon$ is the empty sequence. Show that $\N \cong \N^*$ by defining
-   a bijection $\N \rightarrow \N^*$.
+  Consider $\mathbb{N}^*$, the set of all finite sequences of natural numbers, that is, $\mathbb{N}^{*}=\{\epsilon\}\cup\mathbb{N}\cup\mathbb{N}^2\cup\mathbb{N}^3\ldots$. Here,$\epsilon$ is the empty sequence. Show that $\mathbb{N}\cong\mathbb{N}^*$ by defining a bijection $\mathbb{N}\to\mathbb{N}^*$.
 \end{exercise}
 
-\begin{exercise}
-   Show that $R \cong R \times R$. \textbf{Hint:} Use the fact that 
-   $R \cong \{0,1\}^{\N}$ and thus show that $\{0,1\}^{\N} \cong \{0,1\}^{\N} \times \{0,1\}^{\N}$.
-\end{exercise}
+\begin{proof}
+First we can proof $\{0,1\}^*\cong\mathbb{N}$:\\
+Formally, we can define a function:
+\begin{align}
+\nonumber f_1:\{0,1\}^*\to\mathbb{N},&\forall a=(a_1^{(n)},a_2^{(n)},a_3^{(n)},\ldots,a_n^{(n)}) \in \{0,1\}^{*},a_i^{(n)}=0 or 1,i=1,2,\ldots,n \\
+\nonumber &\to 10^n+\sum_{i=1}^n10^{i-1}a_i^{(n)}
+\end{align}
+\[\]
+For example:$f_1(001010)=1001010_{10}$.\\Then we can define another function:
+\[f_2:\mathbb{N}\to\{0,1\}^*,decimal \quad number \to binary\]
+For example:$f_2(16)=10000$.So we get the conclusion:\\
+\[\{0,1\}^*\cong\mathbb{N} \eqno(1)\]
+Secondly, we can proof $\{0,1\}^*\cong\mathbb{N}^*$:\\
+Define a function:
+\[f_3:\{0,1\}^*\to\mathbb{N}^*,x \to x\]
+Another function:
+\begin{align}
+\nonumber f_4:\mathbb{N}^*\to\{0,1\}^*,&\forall a=(a_1^{(n)},a_2^{(n)},a_3^{(n)},\ldots,a_n^{(n)}) \in \mathbb{N}^{*},a_i^{(n)} \in \mathbb{N},i=1,2,\ldots,n\\
+\nonumber \to&(a_1^{(n)}\%2,a_2^{(n)}\%2,a_3^{(n)}\%2,\ldots,a_n^{(n)}\%2),i=1,2,\ldots,n
+\end{align}
+For example, $f_4((154,3,89,23,48))=01110$. So we get the conclusion:\\
+\[\{0,1\}^*\cong\mathbb{N}^*\eqno(2)\]
+According (1) and (2), $\mathbb{N}\cong\mathbb{N}^*$ is obvious.
+\end{proof}
 
 \begin{exercise}
-  Consider $\R^{\N}$, the set of all infinite sequences $(r_1, r_2, r_3,\dots)$ of real numbers.
-  Show that $\R \cong \R^{\N}$. \textbf{Hint:} Again, use the fact that $\R \cong \{0,1\}^{\N}$.
+	Show that $R \cong R \times R$. \textbf{Hint:} Use the fact that $R \cong \{0,1\}^{\mathbb{N}}$ and thus show that $\{0,1\}^{\mathbb{N}} \cong \{0,1\}^{\mathbb{N}} \times \{0,1\}^{\mathbb{N}}$.
 \end{exercise}
+
+\begin{proof}
+Obvious, there exits a function:
+\begin{align}
+\nonumber f_1:\{0,1\}^{\mathbb{N}} \to \{0,1\}^{\mathbb{N}} \times \{0,1\}^{\mathbb{N}}, x \to (x, 0000\ldots)
+\end{align}
+Then, we define a function:
+\begin{align}
+\nonumber f_2:\{0,1\}^{\mathbb{N}} \times \{0,1\}^{\mathbb{N}} \to \{0,1\}^{\mathbb{N}}, (a_1a_2a_3\ldots, b_1b_2b_3\ldots) \to (a_1b_1a_2b_2a_3b_3\ldots)
+\end{align}
+Such as:\\
+\begin{center}
+\includegraphics[scale=0.8]{1.png} 
+\end{center}
+Therefore, we proof $\{0,1\}^{\mathbb{N}} \cong \{0,1\}^{\mathbb{N}} \times \{0,1\}^{\mathbb{N}}$, and then $R \cong R \times R$.
+\end{proof}
+
+\begin{exercise}
+Consider $R^{\mathbb{N}}$, the set of all infinite sequences $(r_1, r_2, r_3, \ldots)$ of real numbers. Show that $R \cong R^{\mathbb{N}}$. \textbf{Hint:} Again, use the fact that $R \cong \{0,1\}^{\mathbb{N}}$.
+\end{exercise}
+
+\begin{proof}
+We only need to proof that ${(\{0,1\}^{\mathbb{N}})}^{\mathbb{N}} \cong \{0,1\}^{\mathbb{N}}$.
+Firstly, we can know the following function easily:
+\begin{align}
+f_1:\{0,1\}^{\mathbb{N}} \to {(\{0,1\}^{\mathbb{N}})}^{\mathbb{N}}, x \to (x, 00000\ldots, 00000\ldots,00000\ldots, \ldots).
+\end{align}
+\begin{center}
+\includegraphics[scale=0.6]{2.png} 
+\end{center}
+Then,define a complexer function:
+\begin{align}
+f_2:{(\{0,1\}^{\mathbb{N}})}^{\mathbb{N}} \to \{0,1\}^{\mathbb{N}},(x_1^1x_2^1x_3^1\ldots,x_1^2x_2^2x_3^2\ldots,x_1^3x_2^3x_3^3\ldots
+,\ldots) \to (x_1^1x_1^2x_2^2x_1^2x_1^3x_2^3\ldots),x_i^j=0\:or\:1
+\end{align}
+\begin{center}
+\includegraphics[scale=0.6]{3.png} 
+\end{center}
+Now, we can infer ${(\{0,1\}^{\mathbb{N}})}^{\mathbb{N}} \cong \{0,1\}^{\mathbb{N}}$ is true. Thus, $R \cong R^{\mathbb{N}}$.
+\end{proof}
 
 Next, let us view $\{0,1\}^{\N}$ as a partial ordering: given two elements $\mathbf{a}, \mathbf{b} \in \{0,1\}^{\N}$,
 that is, sequences $\mathbf{a} = (a_1,a_2,\dots)$ and $\mathbf{b} = (b_1,b_2,\dots)$, we define
