@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  11 MAR 2018 11:03
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  11 MAR 2018 11:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -222,48 +222,61 @@ LaTeX Warning: No \author given.
 
 ) [1
 
-] [2]
-Overfull \hbox (29.5856pt too wide) in paragraph at lines 124--124
+]
+Overfull \hbox (85.91829pt too wide) in paragraph at lines 74--75
+[]\TU/lmr/m/n/12 There is an example: $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (0\OML
+/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/
+it/12 ; []  ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (1\OML/cmm/m
+/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 
+; []  ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12
+ ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; []  
+; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ; []  ; \OT1/cmr/m/n/12 (1\OML/cmm/m/it/12
+ ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1\OML/cmm/m/it/12 ; []  
+; \OT1/cmr/m/n/12 1)\OMS/cmsy/m/n/12 g$ 
+ []
+
+[2] [3]
+Overfull \hbox (29.5856pt too wide) in paragraph at lines 186--186
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--139
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 155--157
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 
  []
 
 File: 1.png Graphic file (type QTm)
-<use  "1.png" >
+<use  "1.png" > [5]
 File: 2.png Graphic file (type QTm)
  <use  "2.png" >
-Overfull \hbox (107.99945pt too wide) in paragraph at lines 180--180
+Overfull \hbox (107.99945pt too wide) in paragraph at lines 243--243
 [] 
  []
 
 File: 3.png Graphic file (type QTm)
-<use  "3.png" > [4]
-Underfull \hbox (badness 10000) in paragraph at lines 187--191
+<use  "3.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
 
  []
 
-[5] [6] (./homework-02-orderings.aux) ) 
+[6] [7] (./homework-02-orderings.aux) ) 
 Here is how much of TeX's memory you used:
  2754 strings out of 493005
  34209 string characters out of 6134596
- 106119 words of memory out of 5000000
+ 107119 words of memory out of 5000000
  6694 multiletter control sequences out of 15000+600000
  11876 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 29i,10n,35p,335b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,10n,35p,340b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework-02-orderings.pdf (6 pages).
+Output written on homework-02-orderings.pdf (7 pages).
