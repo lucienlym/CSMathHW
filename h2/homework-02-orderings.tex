@@ -1,0 +1,202 @@
+\documentclass[12pt,a4]{article}
+
+
+
+\input{preamble}
+
+
+
+\setcounter{section}{1}
+
+
+\begin{itemize}
+ \item Homework assignment published on Monday, 2018-03-05.
+ \item Work on it and submit a first solution or questions by Sunday, 2018-03-11, 12:00 by
+ email to me and the TAs.
+ \item You will receive feedback by Wednesday, 2018-03-14.
+ \item Submit your final solution by Sunday, 2018-03-18 to me and the TAs.
+\end{itemize}
+
+
+
+\section{Partial Orderings}
+
+
+
+\subsection{Equivalence Relations as a Partial Ordering}
+
+An equivalence relation $R \subseteq V \times V$ is basically the same as a partition
+of $V$. A {\em partition} of $V$ is a set $\{V_1,\dots,V_k\}$ where 
+(1) $V_1 \cup \dots \cup V_k = V$ and (2) the $V_i$ are pairwise disjoint,
+i.e., $V_i \cap V_j  = \emptyset$ for $1 \leq i < j \leq k$. For example,
+$\{ \{1\}, \{2,3\}, \{4\} \}$ is a partition of $\{1,2,3,4\}$ but 
+$\{ \{1\}, \{2,3\}, \{1,4\}\}$ is not. 
+
+
+
+\begin{exercise}
+  Let $E_4$ be the set of all equivalence relations on $\{1,2,3,4\}$. Note that
+  $E_4$ is ordered by set inclusion, i.e., 
+  \begin{align*}
+     (E_4, \{ (R_1,R_2) \in E_4 \times E_4 \ | \ R_1 \subseteq R_2 \} )
+  \end{align*}
+  is a partial ordering. 
+  \begin{enumerate}
+    \item Draw the Hasse diagram of this partial ordering in a  nice way.
+    \item What is the size of the largest chain?
+    \item What is the size of the largest antichain? 
+  \end{enumerate}
+  \end{exercise}
+
+
+\subsection{Chains and Antichains}
+
+Define the partially ordered set $(\nn, \leq)$ as follows:
+$x \leq y$ if $x_i \leq y_i$ for all $1 \leq i \leq n$. For example,
+$(2,5,4) \leq (2,6,6)$ but $(2,5,4) \not \leq (3,1,1)$.
+
+\begin{exercise}
+  Consider the infinite partially ordered set $(\nn, \leq)$.
+  \begin{enumerate}
+  \item
+    Which elements are minimal? Which are maximal?
+  \item Is there a minimum? A maximum?
+  \item Does it have an infinite chain?
+  \item Does it have arbitrarily large antichains? That is, can you find an 
+  antichain $A$ of size $|A| = k$ for every $k \in \N$?
+\end{enumerate}
+\end{exercise}
+
+\begin{exerciseD} 
+  Does every infinite subset $S \subseteq \nn$ contain
+  an infinite chain?
+\end{exerciseD}
+
+\begin{exercise}
+  Show that $(\nn,\leq)$ has no infinite antichain. \textbf{Hint.} Use 
+  the previous exercise.
+\end{exercise}
+
+
+
+Consider the induced ordering on $\{0,1\}^n$. That is, for $x,y\in \{0,1\}^n$
+we have $x \leq y$ if $x_i \leq y_i$ for every coordinate $i \in [n]$.
+
+\begin{exercise}
+ Draw the Hasse diagrams of $(\{0,1\}^n, \leq)$ for $n=2,3$.
+\end{exercise}
+
+\begin{exercise}
+  Determine the maximum, minimum, maximal, and minimal elements of 
+  $\{0,1\}^n$.
+\end{exercise}
+
+\begin{exercise}
+  What is the longest chain of $\{0,1\}^n$?
+\end{exercise}
+
+\begin{exerciseDD}
+  What is the largest antichain of $\{0,1\}^n$?
+\end{exerciseDD}
+
+
+
+\subsection{Infinite Sets}
+
+In the lecture (and the lecture notes) we have showed that $\N \times \N \cong \N$, i.e.,
+there is a bijection $f: \N \times \N \rightarrow \N$. From this, and by induction, it follows
+quite easily that $\N^k \cong \N$ for every $k$.
+
+\begin{exercise}
+   Consider $\N^*$, the set of all finite sequences of natural numbers, that is,
+   $\N^* = \{\epsilon\} \cup \N \cup \N^2 \cup \N^3 \cup \dots$. Here,
+   $\epsilon$ is the empty sequence. Show that $\N \cong \N^*$ by defining
+   a bijection $\N \rightarrow \N^*$.
+\end{exercise}
+
+\begin{exercise}
+   Show that $R \cong R \times R$. \textbf{Hint:} Use the fact that 
+   $R \cong \{0,1\}^{\N}$ and thus show that $\{0,1\}^{\N} \cong \{0,1\}^{\N} \times \{0,1\}^{\N}$.
+\end{exercise}
+
+\begin{exercise}
+  Consider $\R^{\N}$, the set of all infinite sequences $(r_1, r_2, r_3,\dots)$ of real numbers.
+  Show that $\R \cong \R^{\N}$. \textbf{Hint:} Again, use the fact that $\R \cong \{0,1\}^{\N}$.
+\end{exercise}
+
+Next, let us view $\{0,1\}^{\N}$ as a partial ordering: given two elements $\mathbf{a}, \mathbf{b} \in \{0,1\}^{\N}$,
+that is, sequences $\mathbf{a} = (a_1,a_2,\dots)$ and $\mathbf{b} = (b_1,b_2,\dots)$, we define
+$\mathbf{a} \leq \mathbf{b}$ if $a_i \leq b_i$ for all $i \in \N$. Clearly,
+$(0,0,\dots)$ is the minimum element in this ordering and $(1,1,\dots)$ the maximum.\\
+
+\begin{exercise}
+   Give a countably infinite chain in $\{0,1\}^{\N}$. Remember that a set $A$ is countably infinite
+   if $A \cong \N$.
+\end{exercise}
+    $$ (0, 0, 0, \dots) $$
+    $$ (1, 0, 0, \dots) $$
+    $$ (1, 1, 0, \dots) $$
+    $$ (1, 1, 1, \dots) $$
+    $$ \dots $$
+
+    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
+
+\begin{exercise}
+   Find a countably infinite antichain in $\{0,1\}^{\N}$.
+\end{exercise}
+    $$ (1, 0, 0, \dots) $$
+    $$ (0, 1, 0, \dots) $$
+    $$ (0, 0, 1, \dots) $$
+    $$ \dots $$
+
+    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
+
+
+\begin{exercise}
+   Find an uncountable antichain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
+\end{exercise}
+    Since $\{0,1\}^{\N} \cong \R$, there is a bijection: $x \leftrightarrow \mathbf{t}$, $x \in \R, \mathbf{t} \in \{0,1\}^{\N}$. Let's consider $\mathbf{t_i}$.
+    $$ \mathbf{t_i} = (a_1, a_2, \dots), a_k \in \{0,1\}, k \in \N $$
+    Define $\bar{\mathbf{t_i}} = (1-a_1, 1-a_2, \dots)$.
+    Then construct $\hat{\mathbf{t_i}}$ as:
+    $$ \hat{\mathbf{t_i}} = (a_1, 1-a_1, a_2, 1-a_2, \dots) $$
+    Consider $\hat{\mathbf{t_i}}, \hat{\mathbf{t_j}}, \forall i, j \in \N, i \neq j$.
+
+    \textbf{Case 1:} If $\mathbf{t_i} \nleq \mathbf{t_j}$, obviously, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
+
+    \textbf{Case 2:} If $\mathbf{t_i} \leq \mathbf{t_j}$
+    
+    $$\mathbf{t_i}=(a_1, a_2, \dots)\quad \bar{\mathbf{t_i}}=(1-a_1, 1-a_2, \dots)$$
+    $$\mathbf{t_j} = (b_1, b_2, \dots)\quad \bar{\mathbf{t_j}} = (1-b_1, 1-b_2, \dots)$$
+
+    According to the definition of $\mathbf{a} \leq \mathbf{b}$, we know that $a_k \leq b_k$. So, $\bar{\mathbf{t_i}} \geq \bar{\mathbf{t_j}}$.
+
+    Compare every bit of $\hat{\mathbf{t}}$.
+    $$
+    \begin{array}{c|lcccr}
+    \hat{\mathbf{t}} & 1 & 2 & 3 & 4 & \dots \\
+    \hline
+    \hat{\mathbf{t_i}} & a_1 & 1-a_1 & a_2 & 1-a_2 & \dots \\
+    \hat{\mathbf{t_j}} & b_1 & 1-b_1 & b_2 & 1-b_2 & \dots \\
+    \end{array}
+    $$
+
+    Since $a_k \leq b_k$, $1-a_k \geq 1-b_k$. 
+    
+    And since $i \neq j$, $\mathbf{t_i}, \mathbf{t_j}$ are not the same $\mathbf{t}$, which means that $\exists \eta, a_{\eta} < b_{\eta}, 1-a_{\eta} > 1-b_{\eta}$. So, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
+
+    Therefore, $\hat{\mathbf{t_1}} \quad \hat{\mathbf{t_2}} \quad \dots$ is an uncountable antichain in $\{0,1\}^{\N}$.
+
+\begin{exerciseDD}
+   Find an uncountable chain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
+\end{exerciseDD}
+
+
+
+
+
+
+\end{document}
+
+
+
