@@ -256,14 +256,60 @@ $(0,0,\dots)$ is the minimum element in this ordering and $(1,1,\dots)$ the maxi
    Give a countably infinite chain in $\{0,1\}^{\N}$. Remember that a set $A$ is countably infinite
    if $A \cong \N$.
 \end{exercise}
+    $$ (0, 0, 0, \dots) $$
+    $$ (1, 0, 0, \dots) $$
+    $$ (1, 1, 0, \dots) $$
+    $$ (1, 1, 1, \dots) $$
+    $$ \dots $$
+
+    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
 
 \begin{exercise}
    Find a countably infinite antichain in $\{0,1\}^{\N}$.
 \end{exercise}
+    $$ (1, 0, 0, \dots) $$
+    $$ (0, 1, 0, \dots) $$
+    $$ (0, 0, 1, \dots) $$
+    $$ \dots $$
+
+    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
+
 
 \begin{exercise}
    Find an uncountable antichain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
 \end{exercise}
+    Since $\{0,1\}^{\N} \cong \R$, there is a bijection: $x \leftrightarrow \mathbf{t}$, $x \in \R, \mathbf{t} \in \{0,1\}^{\N}$. Let's consider $\mathbf{t_i}$.
+    $$ \mathbf{t_i} = (a_1, a_2, \dots), a_k \in \{0,1\}, k \in \N $$
+    Define $\bar{\mathbf{t_i}} = (1-a_1, 1-a_2, \dots)$.
+    Then construct $\hat{\mathbf{t_i}}$ as:
+    $$ \hat{\mathbf{t_i}} = (a_1, 1-a_1, a_2, 1-a_2, \dots) $$
+    Consider $\hat{\mathbf{t_i}}, \hat{\mathbf{t_j}}, \forall i, j \in \N, i \neq j$.
+
+    \textbf{Case 1:} If $\mathbf{t_i} \nleq \mathbf{t_j}$, obviously, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
+
+    \textbf{Case 2:} If $\mathbf{t_i} \leq \mathbf{t_j}$
+    
+    $$\mathbf{t_i}=(a_1, a_2, \dots)\quad \bar{\mathbf{t_i}}=(1-a_1, 1-a_2, \dots)$$
+    $$\mathbf{t_j} = (b_1, b_2, \dots)\quad \bar{\mathbf{t_j}} = (1-b_1, 1-b_2, \dots)$$
+
+    According to the definition of $\mathbf{a} \leq \mathbf{b}$, we know that $a_k \leq b_k$. So, $\bar{\mathbf{t_i}} \geq \bar{\mathbf{t_j}}$.
+
+    Compare every bit of $\hat{\mathbf{t}}$.
+    $$
+    \begin{array}{c|lcccr}
+    \hat{\mathbf{t}} & 1 & 2 & 3 & 4 & \dots \\
+    \hline
+    \hat{\mathbf{t_i}} & a_1 & 1-a_1 & a_2 & 1-a_2 & \dots \\
+    \hat{\mathbf{t_j}} & b_1 & 1-b_1 & b_2 & 1-b_2 & \dots \\
+    \end{array}
+    $$
+
+    Since $a_k \leq b_k$, $1-a_k \geq 1-b_k$. 
+    
+    And since $i \neq j$, $\mathbf{t_i}, \mathbf{t_j}$ are not the same $\mathbf{t}$, which means that $\exists \eta, a_{\eta} < b_{\eta}, 1-a_{\eta} > 1-b_{\eta}$. So, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
+
+    Therefore, $\hat{\mathbf{t_1}} \quad \hat{\mathbf{t_2}} \quad \dots$ is an uncountable antichain in $\{0,1\}^{\N}$.
+
 
 \begin{exerciseDD}
    Find an uncountable chain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
