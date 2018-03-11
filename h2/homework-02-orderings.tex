@@ -26,25 +26,25 @@
 \subsection{Equivalence Relations as a Partial Ordering}
 
 An equivalence relation $R \subseteq V \times V$ is basically the same as a partition
-of $V$. A {\em partition} of $V$ is a set $\{V_1,\dots,V_k\}$ where 
+of $V$. A {\em partition} of $V$ is a set $\{V_1,\dots,V_k\}$ where
 (1) $V_1 \cup \dots \cup V_k = V$ and (2) the $V_i$ are pairwise disjoint,
 i.e., $V_i \cap V_j  = \emptyset$ for $1 \leq i < j \leq k$. For example,
-$\{ \{1\}, \{2,3\}, \{4\} \}$ is a partition of $\{1,2,3,4\}$ but 
-$\{ \{1\}, \{2,3\}, \{1,4\}\}$ is not. 
+$\{ \{1\}, \{2,3\}, \{4\} \}$ is a partition of $\{1,2,3,4\}$ but
+$\{ \{1\}, \{2,3\}, \{1,4\}\}$ is not.
 
 
 
 \begin{exercise}
   Let $E_4$ be the set of all equivalence relations on $\{1,2,3,4\}$. Note that
-  $E_4$ is ordered by set inclusion, i.e., 
+  $E_4$ is ordered by set inclusion, i.e.,
   \begin{align*}
      (E_4, \{ (R_1,R_2) \in E_4 \times E_4 \ | \ R_1 \subseteq R_2 \} )
   \end{align*}
-  is a partial ordering. 
+  is a partial ordering.
   \begin{enumerate}
     \item Draw the Hasse diagram of this partial ordering in a  nice way.
     \item What is the size of the largest chain?
-    \item What is the size of the largest antichain? 
+    \item What is the size of the largest antichain?
   \end{enumerate}
   \end{exercise}
 
@@ -60,22 +60,73 @@ $(2,5,4) \leq (2,6,6)$ but $(2,5,4) \not \leq (3,1,1)$.
   \begin{enumerate}
   \item
     Which elements are minimal? Which are maximal?
+    \par The minimal element is $(0,0,0,\cdots,0)$.(There are $n 0$s in the element.)
+    \par No element is maximal.
   \item Is there a minimum? A maximum?
+    \par The minimum element is $(0,0,0,\cdots,0)$.(There are $n 0$s in the element.)
+    \par No element is maximum.
   \item Does it have an infinite chain?
-  \item Does it have arbitrarily large antichains? That is, can you find an 
+    \par Yes.
+    \par There is an example: $\{(0,0,0,\cdots,0),(1,0,0,\cdots,0),(1,1,0,\cdots,0),\cdots,(1,1,1,\cdots,1)\}$
+  \item Does it have arbitrarily large antichains? That is, can you find an
   antichain $A$ of size $|A| = k$ for every $k \in \N$?
+    \par Yes. We consider an antichain like this:
+    \begin{center}
+    $\{(1,0,0,\cdots,0),(0,1,0,\cdots,0),
+    (0,0,1,\cdots,0),\cdots,(0,0,0,\cdots,1)\}$
+    \end{center}
+    For the $k^{th}$ element, there is only one $1$ in the $k^{th}$ position, and other positions are all occupied by $0$. And the antichain consists of these $k$ elements.
 \end{enumerate}
 \end{exercise}
 
-\begin{exerciseD} 
+\begin{exerciseD}
   Does every infinite subset $S \subseteq \nn$ contain
   an infinite chain?
 \end{exerciseD}
 
+\begin{proof}
+\par
+Base case $n=1$: Apparently, every two elements in set $N_0^0$ is comparable since there is only one dimension. If there exists an infinite subset $S \subseteq \N_0^0$, the subset $S$ itself is an infinite chain.
+So, the theorem holds when $n=1$. \\
+Inductive hypothesis: \\
+\indent Suppose the theorem holds for all values of $n$ up to some $k$, $k \geq 1$.\\
+Inductive step: \\
+\indent Let $n=k+1$. If there exists an infinite subset $S \subseteq \N_0^{k+1}$, note
+\begin{equation}
+\begin{aligned}
+S_1 &= \{ (a_1, a_2, ..., a_k) &| (a_1, a_2, ..., a_k, a_{k+1}) \in S \}\\
+S_2 &= \{ a_{k+1} &| (a_1, a_2, ..., a_k, a_{k+1}) \in S \}
+\end{aligned}
+\end{equation}
+\indent Since $S$ is infinite, at least one of $S_1, S_2$ is infinite. \\
+\indent Suppose $S_1$ is infinite, according to inductive hypothesis, there is an infinite chain $C_k$ for $S_1 \subseteq \N_0^k$.
+\begin{equation}
+\begin{aligned}
+C_k &= (A_1, A_2, \cdots), A_1 \leq A_2 \leq \cdots \\
+A_i &= (a_{i1}, a_{i2}, \cdots, a_{ik})
+\end{aligned}
+\end{equation}
+\indent Now we construct an infinite chain $C_{k+1}$ for $S \subseteq \N_0^{k+1}$.  Take $b \in S_2$, we append every $A_i$ with $b$ to get $B_i$.
+\begin{equation}
+\begin{aligned}
+B_i &= (a_{i1}, a_{i2}, \cdots, a_{ik}, b)\\
+C_{k+1} &= (B_1, B_2, \cdots), B_1 \leq B_2 \leq \cdots
+\end{aligned}
+\end{equation}
+\indent So $C_{k+1}$ is an infinite chain for $S \subseteq \N_0^{k+1}$.\\
+\indent Now suppose $S_1$ is finite and $S_2$ is infinite. Notice that $S_2$ itself is an infinite chain. We take $(a_1, a_2, ..., a_k) \in S_1$ and we can construct an infinite chain for $S \subseteq \N_0^{k+1}$ in a similar way.
+
+So, the theorem holds for $n=k+1$.
+By the principle of mathematical induction, the theorem holds for all $n \in \mathbb{N}$.
+\end{proof}
+
 \begin{exercise}
-  Show that $(\nn,\leq)$ has no infinite antichain. \textbf{Hint.} Use 
+  Show that $(\nn,\leq)$ has no infinite antichain. \textbf{Hint.} Use
   the previous exercise.
 \end{exercise}
+\begin{proof}
+We proof it by contradiction. Suppose there is an infinite antichain which is also a subset of $\nn$. But from Exercise 2.3, it is clear to us that every infinite subset $S \subseteq \nn$ contain an infinite chain. So there is a contradiction. Consequently, $(\nn,\leq)$ has no infinite antichain.
+\end{proof}
 
 
 
@@ -87,13 +138,24 @@ we have $x \leq y$ if $x_i \leq y_i$ for every coordinate $i \in [n]$.
 \end{exercise}
 
 \begin{exercise}
-  Determine the maximum, minimum, maximal, and minimal elements of 
+  Determine the maximum, minimum, maximal, and minimal elements of
   $\{0,1\}^n$.
 \end{exercise}
-
+\begin{center}
+Maximum element:$(1,1,1,\cdots,1)$
+\par Maximal element:$(1,1,1,\cdots,1)$
+\par Minimum element:$(0,0,0,\cdots,0)$
+\par Minimal element:$(0,0,0,\cdots,0)$
+\end{center}
 \begin{exercise}
   What is the longest chain of $\{0,1\}^n$?
+  \par One of the examples is as follows:
+  \begin{center}
+  $\{(0,0,0,\cdots,0),(1,0,0,\cdots,0),
+  (1,1,0,\cdots,0),\cdots,(1,1,1,\cdots,1)\}$
+  \end{center}
 \end{exercise}
+
 
 \begin{exerciseDD}
   What is the largest antichain of $\{0,1\}^n$?
@@ -115,7 +177,7 @@ quite easily that $\N^k \cong \N$ for every $k$.
 \end{exercise}
 
 \begin{exercise}
-   Show that $R \cong R \times R$. \textbf{Hint:} Use the fact that 
+   Show that $R \cong R \times R$. \textbf{Hint:} Use the fact that
    $R \cong \{0,1\}^{\N}$ and thus show that $\{0,1\}^{\N} \cong \{0,1\}^{\N} \times \{0,1\}^{\N}$.
 \end{exercise}
 
@@ -133,64 +195,18 @@ $(0,0,\dots)$ is the minimum element in this ordering and $(1,1,\dots)$ the maxi
    Give a countably infinite chain in $\{0,1\}^{\N}$. Remember that a set $A$ is countably infinite
    if $A \cong \N$.
 \end{exercise}
-    $$ (0, 0, 0, \dots) $$
-    $$ (1, 0, 0, \dots) $$
-    $$ (1, 1, 0, \dots) $$
-    $$ (1, 1, 1, \dots) $$
-    $$ \dots $$
-
-    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
 
 \begin{exercise}
    Find a countably infinite antichain in $\{0,1\}^{\N}$.
 \end{exercise}
-    $$ (1, 0, 0, \dots) $$
-    $$ (0, 1, 0, \dots) $$
-    $$ (0, 0, 1, \dots) $$
-    $$ \dots $$
-
-    Since there are countably infinite bits in every element, we can construct countably infinite chain in $\{0,1\}^{\N}$ as showed above.
-
 
 \begin{exercise}
    Find an uncountable antichain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
 \end{exercise}
-    Since $\{0,1\}^{\N} \cong \R$, there is a bijection: $x \leftrightarrow \mathbf{t}$, $x \in \R, \mathbf{t} \in \{0,1\}^{\N}$. Let's consider $\mathbf{t_i}$.
-    $$ \mathbf{t_i} = (a_1, a_2, \dots), a_k \in \{0,1\}, k \in \N $$
-    Define $\bar{\mathbf{t_i}} = (1-a_1, 1-a_2, \dots)$.
-    Then construct $\hat{\mathbf{t_i}}$ as:
-    $$ \hat{\mathbf{t_i}} = (a_1, 1-a_1, a_2, 1-a_2, \dots) $$
-    Consider $\hat{\mathbf{t_i}}, \hat{\mathbf{t_j}}, \forall i, j \in \N, i \neq j$.
-
-    \textbf{Case 1:} If $\mathbf{t_i} \nleq \mathbf{t_j}$, obviously, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
-
-    \textbf{Case 2:} If $\mathbf{t_i} \leq \mathbf{t_j}$
-    
-    $$\mathbf{t_i}=(a_1, a_2, \dots)\quad \bar{\mathbf{t_i}}=(1-a_1, 1-a_2, \dots)$$
-    $$\mathbf{t_j} = (b_1, b_2, \dots)\quad \bar{\mathbf{t_j}} = (1-b_1, 1-b_2, \dots)$$
-
-    According to the definition of $\mathbf{a} \leq \mathbf{b}$, we know that $a_k \leq b_k$. So, $\bar{\mathbf{t_i}} \geq \bar{\mathbf{t_j}}$.
-
-    Compare every bit of $\hat{\mathbf{t}}$.
-    $$
-    \begin{array}{c|lcccr}
-    \hat{\mathbf{t}} & 1 & 2 & 3 & 4 & \dots \\
-    \hline
-    \hat{\mathbf{t_i}} & a_1 & 1-a_1 & a_2 & 1-a_2 & \dots \\
-    \hat{\mathbf{t_j}} & b_1 & 1-b_1 & b_2 & 1-b_2 & \dots \\
-    \end{array}
-    $$
-
-    Since $a_k \leq b_k$, $1-a_k \geq 1-b_k$. 
-    
-    And since $i \neq j$, $\mathbf{t_i}, \mathbf{t_j}$ are not the same $\mathbf{t}$, which means that $\exists \eta, a_{\eta} < b_{\eta}, 1-a_{\eta} > 1-b_{\eta}$. So, $\hat{\mathbf{t_i}} \nleq \hat{\mathbf{t_j}}$.
-
-    Therefore, $\hat{\mathbf{t_1}} \quad \hat{\mathbf{t_2}} \quad \dots$ is an uncountable antichain in $\{0,1\}^{\N}$.
 
 \begin{exerciseDD}
    Find an uncountable chain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
 \end{exerciseDD}
-
 
 
 
