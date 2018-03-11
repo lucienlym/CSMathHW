@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  11 MAR 2018 11:15
+=======
+<<<<<<< HEAD
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  11 MAR 2018 11:03
+=======
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/Debian) (preloaded format=xelatex 2017.8.25)  11 MAR 2018 11:09
+>>>>>>> a60065088238b6e6052e58212521786d1662876b
+>>>>>>> question
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -193,6 +201,10 @@ LaTeX Warning: Unused global option(s):
 (./homework-02-orderings.aux)
 \openout1 = `homework-02-orderings.aux'.
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> question
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
@@ -208,8 +220,28 @@ LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Try loading font information for U+msa on input line 72.
+<<<<<<< HEAD
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+=======
+=======
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
+>>>>>>> a60065088238b6e6052e58212521786d1662876b
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+>>>>>>> question
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 72.
@@ -222,6 +254,7 @@ LaTeX Warning: No \author given.
 
 ) [1
 
+<<<<<<< HEAD
 ]
 Overfull \hbox (85.91829pt too wide) in paragraph at lines 74--75
 []\TU/lmr/m/n/12 There is an example: $\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 (0\OML
@@ -237,6 +270,11 @@ it/12 ; []  ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 (1\OML/cmm/m
 
 [2] [3]
 Overfull \hbox (29.5856pt too wide) in paragraph at lines 186--186
+=======
+<<<<<<< HEAD
+] [2]
+Overfull \hbox (29.5856pt too wide) in paragraph at lines 124--124
+>>>>>>> question
 [] 
  []
 
@@ -279,4 +317,24 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  29i,10n,35p,340b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+<<<<<<< HEAD
 Output written on homework-02-orderings.pdf (7 pages).
+=======
+[2] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 189--193
+
+ []
+
+[4] [5] (./homework-02-orderings.aux) ) 
+Here is how much of TeX's memory you used:
+ 2892 strings out of 493638
+ 35846 string characters out of 6146796
+ 98649 words of memory out of 5000000
+ 6266 multiletter control sequences out of 15000+600000
+ 13371 words of font info for 51 fonts, out of 8000000 for 9000
+ 1328 hyphenation exceptions out of 8191
+ 29i,8n,35p,341b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on homework-02-orderings.pdf (5 pages).
+>>>>>>> a60065088238b6e6052e58212521786d1662876b
+>>>>>>> question
