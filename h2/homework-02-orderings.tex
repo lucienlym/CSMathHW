@@ -199,9 +199,9 @@ Define a function:
 Another function:
 \begin{align}
 \nonumber f_4:\mathbb{N}^*\to\{0,1\}^*,&\forall a=(a_1^{(n)},a_2^{(n)},a_3^{(n)},\ldots,a_n^{(n)}) \in \mathbb{N}^{*},a_i^{(n)} \in \mathbb{N},i=1,2,\ldots,n\\
-\nonumber \to&(a_1^{(n)}\%2,a_2^{(n)}\%2,a_3^{(n)}\%2,\ldots,a_n^{(n)}\%2),i=1,2,\ldots,n
+\nonumber \to&(\underbrace{{0,0,\ldots,0}}_{a_1^{(n)}},1,\underbrace{0,0,\ldots,0}_{a_2^{(n)}},1,\ldots,1,\underbrace{0,0,\ldots,0}_{a_n^{(n)}},1)
 \end{align}
-For example, $f_4((154,3,89,23,48))=01110$. So we get the conclusion:\\
+For example, $f_4((2,3,1,4))=00100010100001$. So we get the conclusion:\\
 \[\{0,1\}^*\cong\mathbb{N}^*\eqno(2)\]
 According (1) and (2), $\mathbb{N}\cong\mathbb{N}^*$ is obvious.
 \end{proof}
@@ -318,6 +318,37 @@ $(0,0,\dots)$ is the minimum element in this ordering and $(1,1,\dots)$ the maxi
 \begin{exerciseDD}
    Find an uncountable chain in $\{0,1\}^{\N}$. That is, an antichain $A$ with $A \cong \R$.
 \end{exerciseDD}
+
+\begin{proof}
+As we has learnt in our class, $\exists f : \mathbb{N} \leftrightarrow \mathbb{Q}$.
+So we can arrange $ \mathbb{Q} $ in the sequence of $\mathbb{N}$, such as:\\
+\begin{center}
+\begin{tabular}{ccccccc}
+$\mathbb{N}$ & 1 & 2 & 3 & 4 & 5 & $\ldots$ \\
+$\mathbb{Q}$ & f(1) & f(2) & f(3) & f(4) & f(5) & $\ldots$
+\end{tabular}
+\end{center}
+Construct a set $\mathbb{S}$,\\
+\[\mathbb{S} = \{(i_1,i_2,\ldots,i_k,\ldots) \in \{0,1\}^{\mathbb{N}} | i_k=\left\{
+\begin{array}{rcl}
+1       &      & f(k)\le x\\
+0     &      &  f(k) > x
+\end{array} \right.
+(x \in \mathbb{R} )\}
+\]
+Because between any two real number $x_1, x_2$, there must be a $q \in \mathbb{Q}$,
+that obviously we can find it in the sequence of $\mathbb{Q}$, it well only be 1 in one of the sequence generated from $x_1, x_2$, so for any different x, a sequence is corresponding to it , so $g: x \rightarrow s \in \mathbb{S}$ is injective,and cardinality of $\mathbb{S}$ is larger or equal to $\mathbb{R}$ where x belongs to. What's more,
+\[\\ \forall x_1 < x_2,(x_1,x_2 \in \mathbb{R}), s_1=g(x_1)=(i_1^1,i_2^1,i_3^1,\ldots), s_2 = g(x_2) = (i_1^2,i_2^2,\ldots),\]
+\begin{center}
+\begin{tabular}{c|c|c|c}
+       &$f(k)\le x_1 $ &$ x_1 < f(k) \le x_2 $&$f(k) > x_2$\\
+$i_k^1$&  1        &       0             &    0\\
+$i_k^2$&  1        &       1             &    0
+\end{tabular}
+\end{center}
+So $\forall x_1 < x_2, s_1 < s_2$, which means $\mathbb{S}$ is a chain.
+So $\mathbb{S}$ is an uncountable chain of $\{0,1\}^{\mathbb{N}}$
+\end{proof}
 
 \textbf{Question:} 
 

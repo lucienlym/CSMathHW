@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  11 MAR 2018 11:29
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017) (preloaded format=xelatex 2018.2.16)  17 MAR 2018 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -274,7 +274,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 254--258
 
  []
 
-[7] [8] (./homework-02-orderings.aux) ) 
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
+
+ []
+
+[8] [9] (./homework-02-orderings.aux) ) 
 Here is how much of TeX's memory you used:
  2759 strings out of 493005
  34243 string characters out of 6134596
@@ -282,6 +292,6 @@ Here is how much of TeX's memory you used:
  6696 multiletter control sequences out of 15000+600000
  11876 words of font info for 54 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 29i,10n,35p,340b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,16n,35p,375b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on homework-02-orderings.pdf (8 pages).
+Output written on homework-02-orderings.pdf (9 pages).
