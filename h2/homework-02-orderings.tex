@@ -97,7 +97,7 @@ So, the theorem holds when $n=1$. \\
 Inductive hypothesis: \\
 \indent Suppose the theorem holds for all values of $n$ up to some $k$, $k \geq 1$.\\
 Inductive step: \\
-\indent Let $n=k+1$. If there exists an infinite subset $S \subseteq \N_0^{k+1}$, note
+\indent Let $n=k+1$. Let $S$ be an infinite subset of $\N_0^{k+1}$, note
 \begin{equation}
 \begin{aligned}
 S_1 &= \{ (a_1, a_2, ..., a_k) &| (a_1, a_2, ..., a_k, a_{k+1}) \in S \}\\
@@ -112,7 +112,7 @@ C_k &= (A_1, A_2, \cdots), A_1 \leq A_2 \leq \cdots \\
 A_i &= (a_{i1}, a_{i2}, \cdots, a_{ik})
 \end{aligned}
 \end{equation}
-\indent Now we construct an infinite chain $C_{k+1}$ for $S \subseteq \N_0^{k+1}$.  Take $b \in S_2$, we append every $A_i$ with $b$ to get $B_i$.
+\indent Now we construct an infinite chain $C_{k+1}$ for $S \subseteq \N_0^{k+1}$.  Take one $b$ from $S_2$, we append every $A_i$ with the same constant $b$ to get $B_i$. The last number of $B_i$ is same, so $B_i$ can still form a chain $C_{k+1}$.
 \begin{equation}
 \begin{aligned}
 B_i &= (a_{i1}, a_{i2}, \cdots, a_{ik}, b)\\
@@ -169,6 +169,90 @@ Maximum element:$(1,1,1,\cdots,1)$
   What is the largest antichain of $\{0,1\}^n$?
 \end{exerciseDD}
 
+
+The largest antichain of $\{0,1\}^n$ is the middle level of the Hasse diagram, and the number of elements in the largest antichain is $n \choose \floor{\frac{n}{2}}$.
+\begin{proof}
+Note the $i$th level of the Hasse diagram of $\{0,1\}^n$ as $L_i$. 
+\begin{equation}
+L_i=\{S|S\in \{0,1\}^n , number~ of~ 1s~ in~ S~ is~ i\}
+\end{equation}
+Note a sequence $S \in \{0,1\}^n$ as
+\begin{equation}
+S = \{a_1, a_2, \cdots, a_n\}.
+\end{equation}
+ 
+\par We will first prove that given an antichain $A$ and two adjacent levels $L_i$ and $L_{i+1}$ in the Hasse diagram ($0\leq i < \floor{\frac{n}{2}}$), we can get an new antichain $A'$ having the following properties:
+\begin{itemize} 
+\item $L_i \cap A' = \emptyset$.
+\item $|L_{i+1} \cap A'| = |L_i \cap A| + |L_{i+1} \cap A|$.
+\item $L_j \cap A' = L_j \cap A, for~ j \not = i~, i+1$.
+\end{itemize}
+That means we can move antichain elements in level $L_i$ to level $L_{i+1}$ without changing the rest antichain elements.
+\\
+We can select a subset $D$ from $L_i$ and subset $T$ from $L_{i+1}$ so that
+\begin{equation}
+\begin{aligned}
+D&=L_i \cap A \\
+T&=\{S|S \in L_{i+1},~ S ~ is ~ a ~ direct ~ succession ~ of ~ D \}
+\end{aligned}
+\end{equation}
+
+Following is an example of $D$ and $T$. Elements in antichain $A$ is shown as blue boxes. $D=\{\{1000\},\{0100\}\}$. $T$ is shown as yellow boxes.
+\newpage
+\begin{figure}[hpbt]
+\begin{center}
+\includegraphics[width = 0.6 \textwidth]{pic2_8.png}
+\end{center}
+\end{figure}
+
+First we will prove that if we delete $D$ from antichain $A$ and then add $T$ to get $A'$. $A'$ is still an antichain after moving operation.
+\par
+Suppose that after this operation, there are new relations between elements in $T$ and origin antichain $x$ in level $L_y$, shown as the dot line in the picture. Since $T$ is direct succession of $D$, there must be element in $D$ that have relation with $x$, which means there are two comparable elements in the origin antichain $A$. It is against the definition of antichain, so $A'$ is still an antichain after moving operation.
+
+\par Then we will prove after the moving operation, 
+\begin{equation}
+|A| < |A'|
+\end{equation}
+
+\par Observe that the sum of in-degree of $T$ is at least the sum of out-degree of $D$, because there are in-degrees provided by non-antichains nodes in level $L_i$.
+\begin{equation}
+indegree(T) \geq outdegree(D)
+\end{equation} 
+
+We can calculate in-degree and out-degree of an element $S_i \in L_i$. Out-degree of $S_{i}$ is $n-i$ since out-degree equals to the number of 0s in $S_i$. In-degree of $S_{i}$ is $i$ since in-degree equals to the number of 1s in $S_i$.
+%We can calculate in-degree and out-degree of an element $S_i \in L_i$. Out-degree of $S_{i}$ is $n-i$ since out-degree equals to the number of 0s in $S_i$. In-degree of $S_i$ is the sum of out-degree provided by previous level $L_{i-1}$ divided by the number of elements in $L_i$.
+\begin{equation}
+\begin{aligned}
+outdegree(S_{i}) &= n-i\\
+indegree(S_{i}) &= i
+\end{aligned}
+\end{equation}
+
+Rewrite inequality (7) as
+\begin{equation}
+\begin{aligned}
+|T| \cdot indegree(S_{i+1}) &\geq |D| \cdot outdegree(S_i)\\
+\frac{|T|}{|D|} &\geq \frac{outdegree(S_i)}{indegree(S_{i+1})}\\
+\frac{|T|}{|D|} &\geq \frac{n-i}{i+1} = \frac{{n \choose {i+1}}}{{n \choose i}}
+\end{aligned} 
+\end{equation}
+If $0 \leq i \leq \floor{\frac{n}{2}}-1$,
+\begin{equation}
+\begin{aligned}
+\frac{|T|}{|D|} \geq \frac{{n \choose {i+1}}}{{n \choose i}} > 1
+\end{aligned} 
+\end{equation}
+
+Therefore we prove that there are enough "space" in level $L_{i+1}$ for moving antichain in level $L_i$ to $L_{i+1}$.
+
+\par
+So far we have proved that it is feasible to move antichain elements from level $L_i$ to $L_{i+1}$ and get a larger antichain if $0 \leq i \leq \floor{\frac{n}{2}}-1$.
+\par
+Notice that given an antichain configuration, we can always ajust the antichain to the middle level $L_{\floor{\frac{n}{2}}}$ by adjusting two adjacent levels. So the size of largest antichain must be equal or less than the size of middle level $L_{\floor{\frac{n}{2}}}$. 
+\par 
+However, the middle level itself is an antichain. So the largest antichain is the middle level $L_{\floor{\frac{n}{2}}}$.
+
+\end{proof}
 
 
 \subsection{Infinite Sets}
