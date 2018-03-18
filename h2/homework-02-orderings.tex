@@ -72,16 +72,21 @@ $(2,5,4) \leq (2,6,6)$ but $(2,5,4) \not \leq (3,1,1)$.
     \par The minimum element is $(0,0,0,\cdots,0)$.(There are $n 0$s in the element.)
     \par No element is maximum.
   \item Does it have an infinite chain?
-    \par Yes.
-    \par There is an example: $\{(0,0,0,\cdots,0),(1,0,0,\cdots,0),(1,1,0,\cdots,0),\cdots,(1,1,1,\cdots,1)\}$
+    \par Yes. We consider an chain like this:
+    \begin{center}
+    $\{(1,1,1,\cdots,1),(2,2,2,\cdots,2),
+    (3,3,3,\cdots,3),\cdots,(k,k,\cdots,k)\}$
+    \end{center}
+    \par For every element in the chain, there are $n$ elements in it.
   \item Does it have arbitrarily large antichains? That is, can you find an
   antichain $A$ of size $|A| = k$ for every $k \in \N$?
     \par Yes. We consider an antichain like this:
     \begin{center}
-    $\{(1,0,0,\cdots,0),(0,1,0,\cdots,0),
-    (0,0,1,\cdots,0),\cdots,(0,0,0,\cdots,1)\}$
+    $\{(0,k-1,0,\cdots,0),(1,k-2,0,\cdots,0),
+    (2,k-3,0,\cdots,0),\cdots,(k-1,0,0,\cdots,0)\}$
     \end{center}
-    For the $k^{th}$ element, there is only one $1$ in the $k^{th}$ position, and other positions are all occupied by $0$. And the antichain consists of these $k$ elements.
+    \par For every element in the antichain, the first element in each element of the antichain is increasing from $0$ to $k-1$, and similarly, the second element in each element of the antichain is decreasing from $k-1$ to $0$. As for the other elements, it can be any natural numbers and in the example, we use $0$ to replace them because it is an easy way to express this.
+
 \end{enumerate}
 \end{exercise}
 
