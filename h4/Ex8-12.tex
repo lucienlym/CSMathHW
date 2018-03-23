@@ -1,0 +1,44 @@
+
+\begin{exercise}
+ Show that $f_i$ is an involution without a fixed point.
+ That is, $f(f(x)) = x$ and $f(x) \ne x$ for all $x \in \{0,1\}^d$.
+\end{exercise}
+
+Let $S \subseteq \{0,1\}^d$. We define  $f_i(S)$ as the set arising from applying
+$f_i$ to every element of $S$. Formally,
+\begin{align*}
+f_i(S) := \{ f_i(x) \ | \ x \in S \} \ .
+\end{align*}
+Given a set $S \subseteq \{0,1\}^d$, we call an index $i \in [n]$ {\em active} for $S$
+if $f_i(S) \ne S$. 
+\begin{exercise}
+Let $d=3$ and $S = \{000, 100\}$. Which of the indices $1,2,3$ are active?
+\end{exercise}
+
+
+\begin{exercise}
+ Let $S \subseteq \{0,1\}^d$. Show that if $S \ne \emptyset$ and $S \ne \{0,1\}^d$ then
+ $S$ has at least one active index.
+\end{exercise}
+
+
+Given $S \subseteq \{0,1\}^d$, define $f(S)$ as follows: if $S = \emptyset$ or $S = \{0,1\}^d$
+define $f(S) = S$. Otherwise, let $f(S) := f_i(S)$ where $i$ is the smallest active
+index of $S$ (which exists by the previous exercise).
+
+\begin{exercise}
+ Show that $f$ is an involution. That is, $f(f(S)) = S$. Furthermore, show that
+ the only fixed points of $f$ are $\emptyset$ and $\{0,1\}^d$.
+\end{exercise} 
+
+\begin{exercise}
+   Let $\mathcal{S} = { \{0,1\}^d \choose k }$. This is a set of sets, and each set $S \in \mathcal{S}$
+   consists of exactly $k$ strings from $\{0,1\}^d$. Prove the following statements: 
+   \begin{enumerate}
+   \item $f$ is a bijection from $\mathcal{S}$ to $\mathcal{S}$.
+   \item For $1 \leq k \leq 2^d-1$, this bijection is an involution
+   without fixed points.
+   \item $|\mathcal{S}|$ is even for $1 \leq k \leq 2^d-1$.
+   \end{enumerate}
+\end{exercise}
+
