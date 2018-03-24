@@ -3,6 +3,17 @@
   Complete the proof of Theorem~\ref{theorem-binomial-even}.
 \end{exercise}
 
+\begin{proof}
+$$ \lvert \{0, 1\}^d \rvert = 2^d $$
+$$ \lvert S \rvert = k $$ 
+
+So every $ S $ can be considered as a choice of selecting $k$ strings from $2^d$ strings. The number of $S$ is the choices.
+
+Thus, $${2^d \choose k} = \lvert \mathcal{S} \rvert$$ 
+
+Since we prove that $\lvert \mathcal{S} \rvert$ is even for $1 \leq k \leq 2^d - 1$ in Exercise 4.12, ${2^d \choose k}$ is even for $0 < k < 2^d$.
+\end{proof}
+
 
 
 \begin{exerciseD}
@@ -13,3 +24,84 @@
  \end{theorem}
 \end{exerciseD}
 
+\begin{solution}
+
+Consider the set $\{0,1, \dots, p-1\}^d$. We view this as the set of all $p$-based strings of length $d$. This set has size $p^d = n$. For $1 \leq i \leq d$ and $x \in \{0,1, \dots, p \}^d$ let $f_i(x)$ be $x$ with the $i_{th}$ position $\hat k = (k + 1) \mod p$. For example, when $p = 6 $, $f_3(12345) = 12445$, $f_3(12545)=12045$
+
+\textbf{Step 1} 
+
+Let's prove that $f_i$ is an involution without a fixed point. That is, $f(\dots f(x)) = f^p(x) = x$ and $f(x) \neq x$ for all $x \in \{0,1, \dots, p-1 \}^d$.
+
+\begin{proof}
+Since number at the $i^{th}$ position is changed, obviously, $f(x) \neq x$.
+
+For the number of the $t^{th}$ position, after $p$ functions, $\hat k = ((k+1) \mod p \dots + 1) \mod p = (k + p) \mod p = k$, so $f^p(x) = x$.
+\end{proof}
+
+\textbf{Step 2} 
+
+Let $S \subseteq \{0,1, \dots, p-1 \}^d$. Define $f_i(S) := \{ f_i(x) | x \in S\}$. We call an index $i \in [n]$ $active$ for $S$ if $f_i(S) \neq S$.
+
+Let's prove that if $S \neq 0$ and $S \neq \{0,1, \dots, p-1 \}^d$ then $S$ has at least one active index.
+
+\begin{proof}
+Contradiction.
+
+If $S$ has no active index, then $\forall i, f_i(S) = S$.
+
+Since $S \neq 0$, $\exists \xi \in S$. So $f_i(\xi), f_i(f_i(\xi)), \dots, f^{d-1}_i(\xi) \in S$. Thus, every position can be number $0, 1, \dots, p-1$, which contradicts $S \neq \{0, 1, \dots, p-1\}^d$.
+\end{proof}
+
+\textbf{Step 3}
+
+Given $S \subseteq \{0,1, \dots, p-1\}^d$, define $f(S)$ as follows: if $S = \emptyset$ or $S = \{0,1, \dots, p-1\}^d$ define $f(S) = S$. Otherwise, let $f(S) := f_i(S)$ where $i$ is the smallest active index of $S$.
+
+Let's prove that $f$ is an involution. That is, $f(\dots f(S)) = f^d(S) = S$. Furthermore, let's prove that the only fixed points of $f$ are $\emptyset$ and $\{0,1\}^d$.
+
+\begin{proof}
+$\forall x \in S$, since $f^d(x) = x$, $f^d(x) \in S$. So $f^d(S) = S$.
+
+Since $f(S) = S$ for $S = \emptyset$ or $S = \{0,1, \dots, p-1\}^d$, $\emptyset$ and $\{0,1, \dots, p-1\}^d$ are fixed points.
+
+According to the last step, $f(S) \neq S$ for $S \neq \emptyset$ and $S \neq \{0,1, \dots, p-1 \}^d$, so $\emptyset$ and $\{0,1, \dots, p-1\}^d$ are the only fixed points.
+\end{proof}
+
+\textbf{Step 4}
+
+Let $\mathcal{S} = { \{0,1, \dots, p-1\}^d \choose k }$. This is a set of sets, and each set $S \in \mathcal{S}$
+consists of exactly $k$ strings from $\{0,1, \dots, p-1\}^d$. Let's prove the following statements: 
+   \begin{enumerate}
+   \item $f$ is a bijection from $\mathcal{S}$ to $\mathcal{S}$.
+   \begin{proof}
+   $\forall S \in \mathcal{S}, f(S)$ is also a set consisting of exactly $k$ strings from $\{0,1, \dots, p-1\}^d$, so $f(S) \in \mathcal{S}$. Thus, $f$ is a bijection from $\mathcal{S}$ to $\mathcal{S}$.
+   \end{proof}
+   \item For $1 \leq k \leq p^d-1$, this bijection is an involution without fixed points.
+   \begin{proof}
+   $f^d(S) = S$ as showed in \textbf{Step 3}, so $f$ is an involution.
+
+   Since $1 \leq k \leq p^d - 1$, $\forall S \in \mathcal{S}$, $S \neq \emptyset$ and $S \neq \{0, 1, \dots, p-1\}^d$. Thus, $f(S) \neq S$. This bijection has no fixed points.
+
+   \end{proof}
+   \item $|\mathcal{S}|$ can be divided by $p$ for $1 \leq k \leq p^d - 1$.
+   \begin{proof}
+   $\forall S \in \mathcal{S}$, $f(S), f(f(S)), \dots f^{d-1}(S)$ construct a cluster of size $p$. $f$ can transform $S$ within the cluster and cannot transform out of the cluster, so the clusters are independent to each other. The number of clusters $\mathcal{S}$ have is an integer, so $\lvert \mathcal{S} \rvert$ can be divided by $p$.
+   \end{proof}
+   \end{enumerate}
+
+   \textbf{Last Step}
+
+\begin{proof}
+When $k=0$ or $k=n$, ${n \choose k} = 1$ cannot be divided by $p$.
+
+$$ \lvert \{0, 1, \dots, p-1\}^d \rvert = p^d = n $$
+$$ \lvert S \rvert = k $$ 
+
+So every $ S $ can be considered as a choice of selecting $k$ strings from $n$ strings. The number of $S$ is the choices.
+
+Thus, $${n \choose k} = \lvert \mathcal{S} \rvert$$ 
+
+Since we prove that $\lvert \mathcal{S} \rvert$ can be devided by $p$ for $1 \leq k \leq p^d - 1$ , ${n \choose k}$ can be divided by $p$ unless $k=0$ or $k=n$.
+\end{proof}
+
+
+\end{solution}
