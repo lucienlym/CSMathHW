@@ -81,6 +81,38 @@ $\sum_{k=0}^n {n \choose k}$ is not.
    Start by writing a simple recursive program that computes $P_n$.
 \end{exercise}
 
+\textbf{Solution.}
+    Note $Q_n(i)$ to be the number of ways to write the natural number $n$ as a sum $
+  a_1 + a_2 + \cdots + a_k$ such that
+  $1 \leq a_1 \leq a_2 \leq \dots \leq a_k$ and $a_1 = i$.
+\par Obviously, the number of different ways to write $n$ equals to the sum of number of different ways where $a_i=1,2,...,n$. We have
+\begin{equation}
+P_n = \sum_{i=1}^n Q_n(i) 
+\end{equation}
+\par For convenience, we let $Q_n(i) = 0$ if $i>n$.
+\par Now we try to find a recursive formula for $Q_n(i)$, after that we can get the formula for $P_n$ using the equation above. 
+\par We can view the number of ways to write natural number $n$ as the number of ways to put boards to segment a string of balls so that the number of balls located in th left side is less or equal to number of balls located in the right side. We observe that
+\begin{equation}
+Q_n(i) = \sum_{j=i}^{n-i} Q_{n-i}(j)
+\end{equation}
+The equation has the following explanation. We start by segmenting $i$ balls out of $n$ balls in the left side, then there are $n-i$ balls remaining in the right side. If we continue to segment the remaining balls, we can start by segment $j$ balls and $i \leq j$. So the total number of ways to segment $n$ balls. 
+
+\newpage
+\begin{figure}[hpbt]
+\begin{center}
+\includegraphics[width = 0.8 \textwidth]{ball3_6.png}
+\end{center}
+\end{figure}
+\par As the picture shows, we want to get the formula for $Q_n(2)$. We first segment two balls in the left and there are $n-2$ balls remaining. Then we may start by any number $j \ge 2$. Then the total number of ways to segment balls is $\sum_{j=2}^{n-2} Q_{n-2}(j)$.
+
+\par Now we get the recursive formula for $Q_n(i)$ and thus get formula for $P_n$.
+\begin{equation}
+\begin{aligned}
+Q_1(1) &= 1 \\
+Q_n(i) &= \sum_{j=i}^{n-i} Q_{n-i}(j) \\
+P_n &= \sum_{i=1}^n Q_n(i) 
+\end{aligned}
+\end{equation}
 
 
 \end{document}
