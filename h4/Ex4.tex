@@ -1,4 +1,12 @@
 
 \begin{exercise}
    Find a closed formula for $f(n!)$ in terms of $n$ and $|n|_1$.
+\textbf{Solution.}
+\par From the rule we find, we can easily find the formula $n-|n|_1$
+\par We can prove this by induction.
+\par Basic step. When n=1, it is obvious that $f(1!)=1-|1|_1=0$
+\par Induction Hypothesis. We assume that when n=k, $f(k!)=k-|k|_1=0$.
+\par Now let's prove that $n=k+1$, $f((k+1)!)=k+1-|k+1|_1=0$ is true.
+\par If $k$ is even, then $k+1$ is odd, the lowest bit of the binary form of $k+1$ is 1(changed from 0) with other bits unchanged, so $|k+1|_1=|k|+1$, so $f((k+1)!)=f(k!)$ and it is true for the even number k.
+\par If $k$ is odd, then $k+1$ is even, the situation is a little complex. It is obvious that $k+1$ can be changed into a form such that $k+1=2^m\times p$ ($m$ is an integer and $p$ is an odd number). Thus, $f((k+1)!)=f(k!)+m$. $k+1$ can be divided by $2^m$, so the first $m^{th}$ bits of the binary form of $k+1$ is 0(all changed from 1), and the ${m+1}^{th}$ bit is 1(changed from 0) with other bits unchanged. Therefore, we get one 1 but lose m 1s instead. $|k+1|_1=|k|_1-(m-1)$, so $f((k+1)!)=f(k!)+m=k+1-|k|_1+m-1=k+1-|k+1|_1$
 \end{exercise}
