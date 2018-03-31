@@ -34,10 +34,9 @@ So 1 and 2 are active.
 
 \begin{proof}
 \[\forall x \in S, f(f(x)) = x \Rightarrow f(f(S))=S\]
-If $S= \emptyset$, $f(S)=S$.If there is at least one element in S and $f(S)=S$. We call the element as $x_{0\ldots 00}$. Since $f(S) = S$, $f_1(x) \in S$, which is named as $x_{0\ldots 01}$.Then, $f_2(x), f_2(x_1) \in S$, which is named as $x_{0\ldots 10} \: and\: x_{0\ldots 11}$.Similarly, we can deduce that $x_{0\ldots 00},x_{0\ldots01},x_{0\ldots 10}\ldots ,x_{1\ldots 11} \in S$, which means $S = \{0,1\}^d$. So $f(S)=S \Rightarrow S=\emptyset \: or\: \{0,1\}^d$. That is to say that the only fixed points of $f$ are $\emptyset$ and $\{0,1\}^d$.
-\begin{center}
-\includegraphics[scale=0.8]{10.png} 
-\end{center}
+Let's suppose that f(S)=S when $S \neq \{0,1\}^d\:and\: S \neq \emptyset$.Thus, there must exist an element $x\in S$ and an element $y\in \{0,1\}^d\backslash S$.Define a step as changing one number's 1 bit, such as $00000 \rightarrow 00001$.Obviously, one figure can walk into any other one in at most n steps(n is the number of bits).The path from x to y is followed, and the distance of neighbours is one step, which means $t_{k+1}=f_{i_k}(t_k)$.
+\[x=t_0 \rightarrow t_1 \rightarrow\ldots\rightarrow t_n \rightarrow t_{n+1}=y\]
+Since f(S)=S, $t_{k+1}\in S \Rightarrow t_{k+1}=f_{i_k}(t_k)\in S$.By induction, we can know that $y\in S$ on the base of $x\in S$,which results in conflict with the claim $y\in \{0,1\}^d\backslash S$. Therefore, the only fixed points of f are $\emptyset$ and $\{0,1\}^d$.
 \end{proof}
 
 \begin{exercise}
@@ -52,7 +51,7 @@ If $S= \emptyset$, $f(S)=S$.If there is at least one element in S and $f(S)=S$. 
 \end{exercise}
 
 \begin{proof}
-1. $\forall S \in \mathcal{S}$, f(S) also consists of k strings, which means $f(S) \in \mathcal{S}$. So f is a bijection from $\mathcal{S}$ to $\mathcal{S}$.
+1. $\forall S_1 \neq S_2 \in \mathcal{S}, \exists x_1\in S_1, x_1 \notin S_2 \Rightarrow f(x_1)\in f(S_1),f(x_1)\notin f(S_2) \Rightarrow f(S_1)\neq f(S_2)$.So f is an injective. And $|\mathcal{S}|=|\mathcal{S}|$, so f is a surjective. Thus, $f$ is a bijection from $\mathcal{S}$ to $\mathcal{S}$.
 \end{proof}
 
 \begin{proof}
