@@ -1,12 +1,23 @@
-
 \begin{exercise}
    Find a closed formula for $f\left({n \choose k}\right)$ in terms of $n, k, |n|_1$, and so on.
 \end{exercise}
 
+\textbf{Solution.}According to the exercise above, $f(n!)=n-|n|_1$.
+$$
+\begin{aligned}
+    f\left({n \choose k}\right) & =f\left({{n!} \choose {k!(n-k)!}}\right)
+    \\&=f(n!)-f(k!)-f((n-k)!)
+    \\&=-|n|_1+|k|_1+|n-k|_1
+\end{aligned}
+$$
 
 \begin{exercise}
  Prove Theorem~\ref{theorem-lucas-2}. With our new notation, prove that
- $f\left( {n \choose k}\right)$ is $0$ if $k \preceq n$ and at least $1$ if 
+ $f\left( {n \choose k}\right)$ is $0$ if $k \preceq n$ and at least $1$ if
  $k \not \preceq n$.
 \end{exercise}
+
+\textbf{Proof.}If $k \preceq n$, $n-k$ will have exactly the same $1$s with $|n|_1-|k|_1$. 
+
+Otherwise, every same bit in $n$ and $k$ with $1$ will reduce $|n|_1$ no more than the number of these bits, and we call the number $i_1$. Every bit with $1$ in $k$ and $0$ in $n$ will result in at least $1$ carry which replaces $0$ in $n$ with $1$, and we call the number of these  bits $i_0$ and the number of carries $c$, obviously $c\geq i_0$ and $i_0\geq 1$. Note that $$|n-k|_1=|n|_1-i_1-i_0+c=|n|_1-|k|_1+c\geq |n|_1-|k|_1+1,$$ so $$f\left( {n \choose k}\right)=-|n|_1+|k|_1+|n-k|_1>0.$$
 
